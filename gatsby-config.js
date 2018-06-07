@@ -1,5 +1,5 @@
 module.exports = {
   siteMetadata: {
-    title: 'Data Dictionary'
+    title: "Data Dictionary"
   }
-}
+};
