@@ -43,6 +43,6 @@ Usage:
 
   - Define an entry unique id via frontmatter, and include that in the slug
   - Link markdown entries via html anchor tag
-  - Link markdown entries via react component link tag
 
-- Add mdx entries
+- Add mdx (markdown+jsx) entries
+  - Link markdown entries via react component link tag
