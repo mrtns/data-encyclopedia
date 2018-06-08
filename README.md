@@ -41,8 +41,10 @@ Usage:
 
 - Link markdown entries
 
-  - Define an entry unique id via frontmatter, and include that in the slug
   - Link markdown entries via html anchor tag
 
 - Add mdx (markdown+jsx) entries
+
   - Link markdown entries via react component link tag
+
+- Preserve old links when entries are renamed
