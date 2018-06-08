@@ -2,9 +2,9 @@
 
 A data encyclopedia website powered by markdown and a static site generator.
 
-# Jobs to be done
+# Functionality
 
-Overall
+Overall:
 
 - I WANT a single place to reference all my data  
   SO THAT I don’t have to jump to different tools to see definitions, metrics, stories, reports, etc
@@ -19,8 +19,11 @@ In Detail:
 I WANT to add markdown files representing components  
 SO THAT each component is a plain text file
 
+Usage:
+
 - Add markdown files to `src/entries/`
 
 - Via `gatsby-node.js`, every markdown file entry will
   - get a url slug auto-generated
+  - have the slug set in `allMarkdownRemark.edges.node.fields.slug`
   - get a page created, using the `src/templates/markdown-entry.js` template file
