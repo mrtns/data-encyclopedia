@@ -24,6 +24,25 @@ Usage:
 - Add markdown files to `src/entries/`
 
 - Via `gatsby-node.js`, every markdown file entry will
-  - get a url slug auto-generated
-  - have the slug set in `allMarkdownRemark.edges.node.fields.slug`
   - get a page created, using the `src/templates/markdown-entry.js` template file
+
+### Auto-generate a url slug
+
+I WANT to have each markdown entry get a url slug auto generated from the file name  
+SO THAT I don't have to manually define it in the frontmatter
+
+Usage:
+
+- Via `gatsby-node.js`, every markdown file entry will
+  - get a url slug auto-generated, based on the file name
+  - have the slug set in `allMarkdownRemark.edges.node.fields.slug`
+
+# Next Up
+
+- Link markdown entries
+
+  - Define an entry unique id via frontmatter, and include that in the slug
+  - Link markdown entries via html anchor tag
+  - Link markdown entries via react component link tag
+
+- Add mdx entries
