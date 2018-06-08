@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "A data dictionary website powered by markdown and a static site generator.",
   "dependencies": {
-    "gatsby": "^1.9.270"
+    "gatsby": "^1.9.270",
+    "gatsby-source-filesystem": "^1.5.38",
+    "gatsby-transformer-remark": "^1.7.42"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
