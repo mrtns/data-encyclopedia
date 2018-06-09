@@ -10,6 +10,11 @@ module.exports = {
         path: `${__dirname}/src/`
       }
     },
-    "gatsby-transformer-remark"
+    {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: ["gatsby-remark-relative-linker-md-extension-remover"]
+      }
+    }
   ]
 };

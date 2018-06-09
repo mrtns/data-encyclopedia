@@ -37,14 +37,27 @@ Usage:
   - get a url slug auto-generated, based on the file name
   - have the slug set in `allMarkdownRemark.edges.node.fields.slug`
 
+## Link markdown entries
+
+I WANT to link other markdown entries with the markdown link syntax
+
+I WANT the links to work locally, in Github, and in the compiled gatsby site
+
+Usage:
+
+- In a markdown file, add a [markdown link](https://spec.commonmark.org/0.28/#links) to any other entry, with the following rules:
+  - link destination starts with `./`
+  - link destination contains the `.md` extension
+- For example: `[another-markdown-file](./another-markdown-file.md)`
+- Via a `gatsby-remark-relative-linker-md-extension-remover` plugin for `gatsby-transformer-remark`
+
 # Next Up
 
 - Link markdown entries
 
-  - Link markdown entries via html anchor tag
+  - Preserve the # and ? segments of the URL
+  - Preserve old links when entries are renamed
 
 - Add mdx (markdown+jsx) entries
 
   - Link markdown entries via react component link tag
-
-- Preserve old links when entries are renamed
