@@ -61,3 +61,28 @@ Usage:
 - Add mdx (markdown+jsx) entries
 
   - Link markdown entries via react component link tag
+
+- Organize entries
+
+  - Organize entries with physical folder structure
+
+    - List entries by folder structure
+    - Render folders via index.md
+
+  - Organize entries with virtual folder structure
+
+    - List entries by virtual folder structure
+
+  - Organize entries by key-value tags
+
+    - List entries by entry type (defined in frontmatter)
+
+- Add js entries
+
+- Embed entries
+
+* List inbound links for an entry
+
+  - List inbound links for an entry by link type (JIRA style)
+
+* Iframe external content
