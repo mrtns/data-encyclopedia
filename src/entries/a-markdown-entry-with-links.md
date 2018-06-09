@@ -11,6 +11,7 @@ Examples:
 - Plain: [a-markdown-entry](./a-markdown-entry.md)
 - With hash: [a-markdown-entry](./a-markdown-entry.md#some-hash)
 - With query: [a-markdown-entry](./a-markdown-entry.md?some-query=some-query-value)
+- Link to an entry in a subfolder: [a-markdown-entry-in-a-folder](./entry-folder/a-markdown-entry-in-a-folder.md)
 
 These links work:
 
