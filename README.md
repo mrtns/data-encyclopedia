@@ -80,8 +80,16 @@ Usage:
 
 - Embed entries
 
-* List inbound links for an entry
+- Contextualize entries
 
-  - List inbound links for an entry by link type (JIRA style)
+  - List inbound links in an entry
+
+    - List inbound links for an entry by link type (JIRA style)
+
+  - List folder structure position in an entry
+
+    - List parents and children of the physical folder structure for an entry
+
+    - List parents and children of a virtual folder structure for an entry
 
 * Iframe external content
