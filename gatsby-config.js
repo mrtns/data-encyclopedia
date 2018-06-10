@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: "gatsby-transformer-remark",
       options: {
-        plugins: ["gatsby-remark-relative-linker-md-extension-remover"]
+        plugins: ["gatsby-remark-relative-link-adapter"]
       }
     }
   ]
