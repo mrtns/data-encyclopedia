@@ -24,3 +24,19 @@ describe("plain markdown links", () => {
     });
   });
 });
+
+describe("link to an entry in a subfolder", () => {
+  test("it should do something", () => {
+    const markdownAST = remark.parse(
+      `
+      [entry-folder/a-markdown-entry-in-a-folder](./entry-folder/a-markdown-entry-in-a-folder.md)
+      `.trim()
+    );
+
+    const transformed = plugin({ markdownAST });
+
+    visit(transformed, "link", node => {
+      expect(node.url).toEqual("../entry-folder/a-markdown-entry-in-a-folder/");
+    });
+  });
+});
