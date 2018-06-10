@@ -47,7 +47,6 @@ Usage:
 
 - In a markdown file, add a [markdown link](https://spec.commonmark.org/0.28/#links) to any other entry, with the following rules:
   - link destination starts with `./`
-  - link destination contains the `.md` extension
 - For example: `[another-markdown-file](./another-markdown-file.md)`
 - Via a `gatsby-remark-relative-linker-md-extension-remover` plugin for `gatsby-transformer-remark`
 

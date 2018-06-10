@@ -12,6 +12,7 @@ Examples:
 - With hash: [a-markdown-entry](./a-markdown-entry.md#some-hash)
 - With query: [a-markdown-entry](./a-markdown-entry.md?some-query=some-query-value)
 - Link to an entry in a subfolder: [a-markdown-entry-in-a-folder](./entry-folder/a-markdown-entry-in-a-folder.md)
+- Link to a (index entry in) subfolder: [entry-folder-with-index-entry](./entry-folder-with-index-entry/index.md)
 
 These links work:
 
