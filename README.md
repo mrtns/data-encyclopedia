@@ -57,9 +57,13 @@ Usage:
   - Preserve the # and ? segments of the URL
   - Preserve old links when entries are renamed
 
-- Add mdx (markdown+jsx) entries
+- Add entries
 
-  - Link markdown entries via react component link tag
+  - Add mdx (markdown+jsx) entries
+
+    - Link markdown entries via react component link tag
+
+  - Add js entries
 
 - Organize entries
 
@@ -76,9 +80,15 @@ Usage:
 
     - List entries by entry type (defined in frontmatter)
 
-- Add js entries
+- Compose entries
 
-- Embed entries
+  - Embed entries
+
+  - Compose entries with [mdx](https://github.com/mdx-js/mdx)
+
+  - Compose entries via markdown and [rehype-react](https://using-remark.gatsbyjs.org/custom-components/)
+
+  - Iframe external content
 
 - Contextualize entries
 
@@ -91,5 +101,3 @@ Usage:
     - List parents and children of the physical folder structure for an entry
 
     - List parents and children of a virtual folder structure for an entry
-
-* Iframe external content
