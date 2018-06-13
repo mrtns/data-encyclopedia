@@ -4,7 +4,7 @@ import Link from "gatsby-link";
 export default ({ data }) => {
   const entries = data.allMarkdownRemark.edges.map(edge => (
     <li>
-      <Link to={edge.node.fields.path}>{edge.node.id}</Link>
+      <Link to={edge.node.fields.path}>{edge.node.fields.path}</Link>
     </li>
   ));
   return (
