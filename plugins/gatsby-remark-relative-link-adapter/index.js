@@ -24,7 +24,7 @@ function url_is_relative_link(node_url) {
 }
 
 module.exports = ({ markdownAST, markdownNode }) => {
-  const current_node_path = markdownNode.absolutePath;
+  const current_node_path = markdownNode.fileAbsolutePath;
   visit(markdownAST, "link", node => {
     if (url_is_relative_link(node.url)) {
       const link_url_path = path.parse(node.url);
