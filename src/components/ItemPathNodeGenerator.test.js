@@ -1,7 +1,7 @@
 const itemPathNodeGenerator = require("./ItemPathNodeGenerator");
 
 describe("given an empty path list", () => {
-  test("it should return an empty object", () => {
+  test("it should return an empty list", () => {
     const result = itemPathNodeGenerator.getAllPathNodes([]);
     expect(result).toEqual([]);
   });
