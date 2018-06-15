@@ -1,3 +1,4 @@
+import pathParse from "path-parse";
 import path from "path";
 
 function getAllPathNodes(list_of_item_paths) {
@@ -8,7 +9,7 @@ function getAllPathNodes(list_of_item_paths) {
   }
 
   function parsePath(paths, currentPath) {
-    const currentPathParsed = path.parse(currentPath);
+    const currentPathParsed = pathParse(currentPath);
 
     const parentPath =
       currentPathParsed.base === ""

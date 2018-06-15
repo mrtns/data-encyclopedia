@@ -8,7 +8,8 @@
   "dependencies": {
     "gatsby": "^1.9.270",
     "gatsby-source-filesystem": "^1.5.38",
-    "gatsby-transformer-remark": "^1.7.42"
+    "gatsby-transformer-remark": "^1.7.42",
+    "path-parse": "^1.0.5"
   },
   "devDependencies": {
     "eslint-config-prettier": "^2.9.0",
