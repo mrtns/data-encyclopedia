@@ -51,3 +51,18 @@ describe("given a list with one path", () => {
   expect(result).toContainObject({ path: "/folder/subfolder/" });
   expect(result).toContainObject({ path: "/folder/subfolder/thing/" });
 });
+
+describe("given a list with two identical paths", () => {
+  const list_with_two_identical_paths = [
+    "/folder/subfolder/thing/",
+    "/folder/subfolder/thing/"
+  ];
+
+  const result = getAllPathNodes(list_with_two_identical_paths);
+
+  expect(result).toHaveLength(4);
+  expect(result).toContainObject({ path: "/" });
+  expect(result).toContainObject({ path: "/folder/" });
+  expect(result).toContainObject({ path: "/folder/subfolder/" });
+  expect(result).toContainObject({ path: "/folder/subfolder/thing/" });
+});

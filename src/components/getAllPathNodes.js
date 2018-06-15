@@ -17,7 +17,9 @@ function getAllPathNodes(list_of_item_paths) {
       root: currentPathParsed.root,
       resolvesToItem: list_of_item_paths.includes(currentPath)
     };
-    paths.push(pathNode);
+    if (!paths.map(p => p.path).includes(pathNode.path)) {
+      paths.push(pathNode);
+    }
 
     if (pathNode.base !== "") {
       parsePath(paths, pathNode.dir);
@@ -28,11 +30,4 @@ function getAllPathNodes(list_of_item_paths) {
   return list_of_item_paths.reduce(parsePath, []);
 }
 
-function getAllPathNodesUnique(list_of_item_paths) {
-  const allPathNodes = getAllPathNodes(list_of_item_paths);
-  const uniquePathNodes = [...new Set(allPathNodes)];
-
-  return uniquePathNodes;
-}
-
-module.exports = getAllPathNodesUnique;
+module.exports = getAllPathNodes;
