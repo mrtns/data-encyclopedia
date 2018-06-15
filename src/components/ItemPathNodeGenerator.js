@@ -30,4 +30,4 @@ function getAllPathNodes(list_of_item_paths) {
   return list_of_item_paths.reduce(parsePath, []);
 }
 
-module.exports = getAllPathNodes;
+module.exports = { getAllPathNodes };

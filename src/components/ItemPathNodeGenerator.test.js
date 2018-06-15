@@ -1,4 +1,4 @@
-const getAllPathNodes = require("./getAllPathNodes");
+const itemPathNodeGenerator = require("./ItemPathNodeGenerator");
 
 expect.extend({
   toContainObject(received, argument) {
@@ -29,21 +29,23 @@ expect.extend({
 
 describe("given an empty path list", () => {
   test("it should return an empty object", () => {
-    const result = getAllPathNodes([]);
+    const result = itemPathNodeGenerator.getAllPathNodes([]);
     expect(result).toEqual([]);
   });
 });
 
 describe("given a non-list", () => {
   test("it should throw", () => {
-    expect(() => getAllPathNodes({})).toThrow("Expected an Array");
+    expect(() => itemPathNodeGenerator.getAllPathNodes({})).toThrow(
+      "Expected an Array"
+    );
   });
 });
 
 describe("given a list with one path", () => {
   const list_with_one_path = ["/folder/subfolder/thing/"];
 
-  const result = getAllPathNodes(list_with_one_path);
+  const result = itemPathNodeGenerator.getAllPathNodes(list_with_one_path);
 
   expect(result).toHaveLength(4);
   expect(result).toContainObject({ path: "/" });
@@ -58,7 +60,9 @@ describe("given a list with two identical paths", () => {
     "/folder/subfolder/thing/"
   ];
 
-  const result = getAllPathNodes(list_with_two_identical_paths);
+  const result = itemPathNodeGenerator.getAllPathNodes(
+    list_with_two_identical_paths
+  );
 
   expect(result).toHaveLength(4);
   expect(result).toContainObject({ path: "/" });
@@ -73,7 +77,9 @@ describe("given a list with two overlapping paths", () => {
     "/folder/subfolder/some-other-thing/"
   ];
 
-  const result = getAllPathNodes(list_with_two_overlapping_paths);
+  const result = itemPathNodeGenerator.getAllPathNodes(
+    list_with_two_overlapping_paths
+  );
 
   expect(result).toHaveLength(5);
   expect(result).toContainObject({ path: "/" });
