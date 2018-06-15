@@ -1,14 +1,14 @@
-function getChildren(allPathNodes, parentPathNode) {
+function getChildren(allPathNodes, parentNodePath) {
   const tree = [];
 
   for (var pathNode of allPathNodes) {
-    console.log(pathNode);
-    if (pathNode.dir !== parentPathNode) continue;
+    if (pathNode.parentPath !== parentNodePath) continue;
 
     tree.push({
       path: pathNode.path,
-      node: pathNode,
-      children: getChildren(allPathNodes, pathNode.base)
+      parentPath: pathNode.parentPath,
+      // node: pathNode,
+      children: getChildren(allPathNodes, pathNode.path)
     });
   }
 
@@ -16,6 +16,6 @@ function getChildren(allPathNodes, parentPathNode) {
 }
 
 function getTreeFromPathNodes(pathNodes) {
-  return getChildren(pathNodes, "/");
+  return getChildren(pathNodes, "");
 }
 module.exports = { getTreeFromPathNodes };

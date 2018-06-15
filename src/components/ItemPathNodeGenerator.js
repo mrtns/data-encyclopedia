@@ -10,8 +10,14 @@ function getAllPathNodes(list_of_item_paths) {
   function parsePath(paths, currentPath) {
     const currentPathParsed = path.parse(currentPath);
 
+    const parentPath =
+      currentPathParsed.base === ""
+        ? ""
+        : path.join(currentPathParsed.dir, path.sep);
+
     const pathNode = {
       path: path.join(currentPath, path.sep),
+      parentPath: parentPath,
       base: currentPathParsed.base,
       dir: currentPathParsed.dir,
       root: currentPathParsed.root,

@@ -21,10 +21,22 @@ describe("given a list with one path", () => {
   const result = itemPathNodeGenerator.getAllPathNodes(list_with_one_path);
 
   expect(result).toHaveLength(4);
-  expect(result).toContainObject({ path: "/" });
-  expect(result).toContainObject({ path: "/folder/" });
-  expect(result).toContainObject({ path: "/folder/subfolder/" });
-  expect(result).toContainObject({ path: "/folder/subfolder/thing/" });
+  expect(result).toContainObject({
+    path: "/",
+    parentPath: ""
+  });
+  expect(result).toContainObject({
+    path: "/folder/",
+    parentPath: "/"
+  });
+  expect(result).toContainObject({
+    path: "/folder/subfolder/",
+    parentPath: "/folder/"
+  });
+  expect(result).toContainObject({
+    path: "/folder/subfolder/thing/",
+    parentPath: "/folder/subfolder/"
+  });
 });
 
 describe("given a list with two identical paths", () => {
