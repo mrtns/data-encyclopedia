@@ -10,7 +10,6 @@ describe("given an empty item path node list", () => {
 
 describe("given a path node list with a single root node", () => {
   test("it should return a tree with a single node", () => {
-    console.log(itemPathNodeGenerator.getAllPathNodes(["/"]));
     const path_node_list_with_single_node = [
       {
         path: "/",

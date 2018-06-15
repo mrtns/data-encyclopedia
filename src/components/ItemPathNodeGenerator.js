@@ -1,4 +1,4 @@
-const path = require("path");
+import path from "path";
 
 function getAllPathNodes(list_of_item_paths) {
   if (list_of_item_paths instanceof Array === false) {
