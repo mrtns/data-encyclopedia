@@ -66,3 +66,21 @@ describe("given a list with two identical paths", () => {
   expect(result).toContainObject({ path: "/folder/subfolder/" });
   expect(result).toContainObject({ path: "/folder/subfolder/thing/" });
 });
+
+describe("given a list with two overlapping paths", () => {
+  const list_with_two_overlapping_paths = [
+    "/folder/subfolder/thing/",
+    "/folder/subfolder/some-other-thing/"
+  ];
+
+  const result = getAllPathNodes(list_with_two_overlapping_paths);
+
+  expect(result).toHaveLength(5);
+  expect(result).toContainObject({ path: "/" });
+  expect(result).toContainObject({ path: "/folder/" });
+  expect(result).toContainObject({ path: "/folder/subfolder/" });
+  expect(result).toContainObject({ path: "/folder/subfolder/thing/" });
+  expect(result).toContainObject({
+    path: "/folder/subfolder/some-other-thing/"
+  });
+});
