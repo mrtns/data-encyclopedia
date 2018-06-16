@@ -3,6 +3,22 @@ import Link from "gatsby-link";
 import Pathify from "../components/ItemPathNodeGenerator";
 import Treeify from "../components/ItemTreeGenerator";
 
+const EntryTree = props => {
+  const nodes = props.nodes || [];
+  return (
+    <ul>
+      {nodes.map(node => {
+        return (
+          <li>
+            <Link to={node.path}>{node.path}</Link>
+            <EntryTree nodes={node.children} />
+          </li>
+        );
+      })}
+    </ul>
+  );
+};
+
 export default ({ data }) => {
   const entryPathNodes = Pathify.getAllPathNodes(
     data.allMarkdownRemark.edges.map(e => e.node.fields.path)
@@ -29,12 +45,21 @@ export default ({ data }) => {
   ));
   return (
     <div>
-      <ul>{entryPathNodesUi}</ul>
-      <ul>{entryPathsTreeUi}</ul>
       <div>
-        <h1>All Entries, by Physical Folder Structure</h1>
+        <h1>Data</h1>
+        <h2>Path node data</h2>
+        <ul>{entryPathNodesUi}</ul>
+        <h2>Tree node data</h2>
+        <ul>{entryPathsTreeUi}</ul>
+      </div>
+      <div>
+        <h1>All Entries</h1>
       </div>
       <ul>{entries}</ul>
+      <div>
+        <h1>All Entries, by Physical Folder Structure</h1>
+        <EntryTree nodes={entryPathsTree} />
+      </div>
     </div>
   );
 };
