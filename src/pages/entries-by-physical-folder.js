@@ -19,15 +19,17 @@ const EntryTree = props => {
     <ul>
       {nodes.map(node => {
         const nodeDisplayPath = getNodeDisplayPath(node);
-        const entry = node.resolvesToItem ? (
+        const entryElement = node.resolvesToItem ? (
           <Link to={node.path}>{nodeDisplayPath}</Link>
         ) : (
           <span>{nodeDisplayPath}</span>
         );
+        const childrenElement =
+          node.children.length > 0 ? <EntryTree nodes={node.children} /> : null;
         return (
           <li>
-            {entry}
-            <EntryTree nodes={node.children} />
+            {entryElement}
+            {childrenElement}
           </li>
         );
       })}
