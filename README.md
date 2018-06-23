@@ -14,7 +14,9 @@ Overall:
 
 In Detail:
 
-## Add markdown entries
+## Add entries
+
+### Add markdown entries
 
 I WANT to add markdown files representing components  
 SO THAT each component is a plain text file
@@ -26,7 +28,7 @@ Usage:
 - Via `gatsby-node.js`, every markdown file entry will
   - get a page created, using the `src/templates/markdown-entry.js` template file
 
-### Auto-generate a url slug
+#### Auto-generate a url slug
 
 I WANT to have each markdown entry get a url slug auto generated from the file name  
 SO THAT I don't have to manually define it in the frontmatter
@@ -37,7 +39,9 @@ Usage:
   - get a url slug auto-generated, based on the file name
   - have the slug set in `allMarkdownRemark.edges.node.fields.slug`
 
-## Link markdown entries
+## Link entries
+
+### Link markdown entries
 
 I WANT to link other markdown entries with the markdown link syntax
 
@@ -50,12 +54,15 @@ Usage:
 - For example: `[another-markdown-file](./another-markdown-file.md)`
 - Via a `gatsby-remark-relative-linker-md-extension-remover` plugin for `gatsby-transformer-remark`
 
+## Organize entries
+
+### Organize entries with physical folder structure
+
+#### List entries by physical folder structure
+
+#### Render folders via index.md
+
 # Next Up
-
-- Link markdown entries
-
-  - Preserve the # and ? segments of the URL
-  - Preserve old links when entries are renamed
 
 - Add entries
 
@@ -65,12 +72,16 @@ Usage:
 
   - Add js entries
 
+- Link entries
+
+  - Preserve the # and ? segments of the URL
+  - Preserve old links when entries are renamed
+
 - Organize entries
 
   - Organize entries with physical folder structure
 
-    - List entries by folder structure
-    - Render folders via index.md
+    - Render folders via index.md or README.md (the latter being Github compatible)
 
   - Organize entries with virtual folder structure
 
@@ -101,3 +112,21 @@ Usage:
     - List parents and children of the physical folder structure for an entry
 
     - List parents and children of a virtual folder structure for an entry
+
+- Add shared components in entries
+
+  - Add table of contents
+
+- Meta
+
+  - Extract scenarios into discrete example folders
+
+  - Build the documentation with data-encyclopedia
+
+  - Extract the generic CMS stuff from the specific data-encyclopedia stuff
+
+# Inspiration
+
+- knowledge-repo
+
+- VuePress
