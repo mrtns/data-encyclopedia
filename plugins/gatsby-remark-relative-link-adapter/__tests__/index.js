@@ -12,7 +12,7 @@ const remark = new Remark().data(`settings`, {
 describe("plain markdown links", () => {
   test("it should prefix ../ and remove the .md extension", () => {
     const markdownNode = {
-      absolutePath: "/some/absolute/path/of/entry.md"
+      fileAbsolutePath: "/some/absolute/path/of/entry.md"
     };
     const markdownAST = remark.parse(
       `
@@ -32,7 +32,7 @@ describe("named entries in subfolders", () => {
   describe("link to an entry in a subfolder", () => {
     test("it should prefix ../ and remove the .md extension", () => {
       const markdownNode = {
-        absolutePath:
+        fileAbsolutePath:
           "/entries/an-entry-with-a-link-to-an-entry-in-a-subfolder.md"
       };
       const markdownAST = remark.parse(
@@ -53,7 +53,7 @@ describe("named entries in subfolders", () => {
   describe("link from an entry in a subfolder", () => {
     test("it should prefix ../ and remove the .md extension", () => {
       const markdownNode = {
-        absolutePath:
+        fileAbsolutePath:
           "/entries/subfolder/entry-with-link-to-entry-in-parent-folder.md"
       };
       const markdownAST = remark.parse(
@@ -75,7 +75,8 @@ describe("default (index) entries in folders", () => {
   describe("link to an index entry in a subfolder", () => {
     test("it should prefix ../, remove the 'index' path part, and remove the .md extension", () => {
       const markdownNode = {
-        absolutePath: "/entries/entry-with-link-to-index-entry-in-subfolder.md"
+        fileAbsolutePath:
+          "/entries/entry-with-link-to-index-entry-in-subfolder.md"
       };
       const markdownAST = remark.parse(
         `
@@ -93,7 +94,7 @@ describe("default (index) entries in folders", () => {
   describe("link to an index entry in a parent folder", () => {
     test("it should do something", () => {
       const markdownNode = {
-        absolutePath:
+        fileAbsolutePath:
           "/entries/parent-entry-folder-with-index/child-entry-folder-with-index/index.md"
       };
       const markdownAST = remark.parse(
