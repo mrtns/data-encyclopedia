@@ -7,7 +7,7 @@ function getChildren(allPathNodes, parentNodePath) {
     tree.push({
       path: pathNode.path,
       parentPath: pathNode.parentPath,
-      // node: pathNode,
+      resolvesToItem: pathNode.resolvesToItem,
       children: getChildren(allPathNodes, pathNode.path)
     });
   }

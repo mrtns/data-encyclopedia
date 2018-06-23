@@ -4,17 +4,29 @@ import Pathify from "../components/ItemPathNodeGenerator";
 import Treeify from "../components/ItemTreeGenerator";
 
 const EntryTree = props => {
+  const getNodeDisplayPath = function(node) {
+    function removeParentPathPart(node) {
+      return node.path.replace(new RegExp(`^${node.parentPath}`), "");
+    }
+    function removeTrailingSlash(nodePath) {
+      return nodePath === "/" ? nodePath : nodePath.replace(/\/$/, "");
+    }
+    return removeTrailingSlash(removeParentPathPart(node));
+  };
+
   const nodes = props.nodes || [];
   return (
     <ul>
       {nodes.map(node => {
-        const nodeDisplayPath = node.path.replace(
-          new RegExp(`^${node.parentPath}`),
-          ""
+        const nodeDisplayPath = getNodeDisplayPath(node);
+        const entry = node.resolvesToItem ? (
+          <Link to={node.path}>{nodeDisplayPath}</Link>
+        ) : (
+          <span>{nodeDisplayPath}</span>
         );
         return (
           <li>
-            <Link to={node.path}>{nodeDisplayPath}</Link>
+            {entry}
             <EntryTree nodes={node.children} />
           </li>
         );
