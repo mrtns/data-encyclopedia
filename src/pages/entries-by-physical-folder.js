@@ -8,9 +8,13 @@ const EntryTree = props => {
   return (
     <ul>
       {nodes.map(node => {
+        const nodeDisplayPath = node.path.replace(
+          new RegExp(`^${node.parentPath}`),
+          ""
+        );
         return (
           <li>
-            <Link to={node.path}>{node.path}</Link>
+            <Link to={node.path}>{nodeDisplayPath}</Link>
             <EntryTree nodes={node.children} />
           </li>
         );
